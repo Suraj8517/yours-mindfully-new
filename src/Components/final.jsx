@@ -7,6 +7,7 @@ export default function Final({ interest, setInterest }) {
   const [err, setErr] = useState(false)
   const [sending, setSending] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [redirecting, setRedirecting] = useState(false)
   const [error, setError] = useState('')
   const up = (k) => (e) => setF({ ...f, [k]: e.target.value })
 
@@ -19,10 +20,6 @@ export default function Final({ interest, setInterest }) {
     if (!f.name.trim()) return setErr(true)
     setErr(false)
     setError('')
-
-    // Open the WhatsApp tab NOW, synchronously inside the click handler.
-    // If we wait until after the fetch, browsers treat it as a popup and block it.
-    const waWindow = window.open('', '_blank')
 
     const params = new URLSearchParams({
       name: f.name.trim(),
@@ -48,10 +45,11 @@ export default function Final({ interest, setInterest }) {
       console.error(ex)
       setError('Something went wrong saving your details, but your WhatsApp message is ready to send.')
     } finally {
-      // Open WhatsApp whether or not the sheet save worked, so the lead isn't lost
-      if (waWindow) waWindow.location.href = waLink
-      else window.location.href = waLink // fallback if the popup was blocked
       setSending(false)
+      // Show the loader, then redirect to WhatsApp after 3 seconds.
+      // Redirects even if the sheet save failed, so the lead isn't lost.
+      setRedirecting(true)
+      setTimeout(() => { window.location.href = waLink }, 3000)
     }
   }
 
@@ -73,7 +71,14 @@ export default function Final({ interest, setInterest }) {
             </div>
           </div>
 
-          {submitted ? (
+          {redirecting ? (
+            <div role="status" aria-live="polite" className="grid justify-items-center gap-4 rounded-[28px] bg-paper p-[clamp(24px,3vw,40px)] text-center text-ink">
+              <div className="size-12 animate-spin rounded-full border-4 border-line border-t-rose" />
+              <h3 className="text-[1.8rem]">Thank you, {f.name.trim()}.</h3>
+              <p>Taking you to WhatsApp to send your message…</p>
+              <a href={waLink} className="text-[.9rem] font-semibold text-rose underline">Not redirected? Tap here</a>
+            </div>
+          ) : submitted ? (
             <div className="grid gap-4 rounded-[28px] bg-paper p-[clamp(24px,3vw,40px)] text-ink">
               <h3 className="text-[1.8rem]">Thank you, {f.name.trim()}.</h3>
               <p>We've received your request and will get back to you soon. If WhatsApp didn't open, tap below.</p>
