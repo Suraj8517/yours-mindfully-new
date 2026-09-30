@@ -5,8 +5,8 @@ import { Wrap, It, Kicker, Lede, Sec } from "./utils/heroUtils"
 function Item({ q, a, id, open, onToggle }) {
   return (
     <div
-      className={`rounded-2xl border transition-colors duration-300 ${
-        open ? "border-rose/40 bg-card shadow-[0_18px_40px_-28px_rgba(0,0,0,.35)]" : "border-line bg-transparent hover:border-ink/25"
+      className={`border-t border-gray-300 transition-colors duration-300 ${
+        open ? "border-gray-100/40 bg-card " : " bg-transparent hover:border-ink/25"
       }`}
     >
       <h3 className="m-0">
@@ -57,7 +57,7 @@ export default function FAQ() {
           <div className="grid content-start gap-8 min-[901px]:sticky min-[901px]:top-[120px]">
             <div className="grid gap-5">
               <Kicker>Questions</Kicker>
-              <h2>Before you <It>begin</It>.</h2>
+              <h2 className="m-0 font-display text-[5rem] font-medium leading-[1] text-ink">Before you <It>begin</It>.</h2>
               <Lede>Anything else on your mind? Ask us directly in the form below.</Lede>
             </div>
 
