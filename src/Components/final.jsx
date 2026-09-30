@@ -26,7 +26,7 @@ export default function Final({ interest, setInterest }) {
       interested: interest,
       time: f.time,
       location: f.where.trim(),
-      message: f.note.trim(), // optional, empty string is fine
+      message: f.note.trim(), 
     })
 
     setSending(true)
@@ -62,9 +62,9 @@ export default function Final({ interest, setInterest }) {
     <Sec id="begin" dark className="relative overflow-hidden rounded-t-[28px] before:pointer-events-none before:absolute before:-right-[120px] before:-top-[120px] before:size-[520px] before:rounded-full before:content-[''] before:[background:radial-gradient(circle,rgba(224,105,127,.35),transparent_65%)]">
       <Wrap className="relative">
         <div className="grid grid-cols-[1.05fr_.95fr] items-start gap-[clamp(32px,5vw,80px)] max-[900px]:grid-cols-1">
-          <div className="grid gap-5">
+          <div className="grid gap-5 ">
             <Kicker dark>Begin at your own pace</Kicker>
-            <h2 className="!text-[clamp(2.6rem,6vw,5rem)]">Your first step is <It c="text-rose-lite">one conversation</It>.</h2>
+            <h2 className="!text-[clamp(2.6rem,6vw,5rem)] leading-[1]">Your first step is <It c="text-rose-lite">one conversation</It>.</h2>
             <Lede dark>Your emotional well-being deserves the same care as your physical health. Tell us what you're looking for and we'll reply to arrange a time.</Lede>
             <div className="mt-10 grid gap-[18px]">
               {contact.map(([k, v, h]) => <div key={k} className="grid gap-1"><small className="text-[.7rem] font-bold uppercase leading-none tracking-[.16em] text-onever-muted">{k}</small><a href={h} className="font-display text-[1.25rem] font-medium leading-[1.2] no-underline hover:text-rose-lite">{v}</a></div>)}
