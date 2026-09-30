@@ -1,0 +1,1 @@
+export const NUMS = [['13', '+', 'years of therapeutic practice'], ['100', '%', 'online, so you can join from anywhere'], ['30', 'min', 'first conversation to find your way forward'], ['7', '', 'ways to begin, from therapy to community']]

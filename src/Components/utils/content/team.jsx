@@ -1,0 +1,2 @@
+export const CREDS = [['Member', 'Counsellors Council of India (CCI)'], ['Associate Counsellor', 'World Mental Health Care Association'], ['Trained', 'Imago Relationship Therapist'], ['Certified', 'Shadow Mastery Coach'], ['Award', 'Lifetime Achievement Award, Mental Health Awareness']]
+export const FOCUS = ['CBT', 'REBT', 'Behavioural Modification', 'Imago Relationship Therapy', 'Shadow Mastery Coaching', 'Inner Child Healing', 'Family & Couple Counselling']

@@ -1,0 +1,12 @@
+export const CARDS = [
+  { id: 'clarity', bg: 'bg-ever text-onever', ribbon: 'Start here', fmt: ['1:1 session', '30 minutes', 'Online'], t: 'Clarity Connect', line: 'Not sure what you need? Start with a conversation.', d: 'A 30-minute one-on-one session to understand where you are, what you may need, and the best way forward. It\'s the easiest first step into any of our services.', acts: [['Book Clarity Connect', 'Clarity Connect (30 min)']], img: 'clarity' },
+  { id: 'growth', bg: 'bg-rose-soft text-ink', fmt: ['Therapy programme', 'Individuals'], t: 'Personal Growth & Healing', line: 'Understand your patterns. Heal. Grow differently.', d: 'Structured emotional support to help you understand yourself, work through emotional patterns, and create meaningful change that lasts.', acts: [['Request a callback', 'Personal Growth & Healing'], ['Brochure', 'Personal Growth & Healing', 1]], img: 'growth' },
+  { id: 'relationship', bg: 'bg-leaf-soft text-ink', fmt: ['Couples programme', 'Married & unmarried'], t: 'Relationship Wellness', line: 'Better relationships begin with better understanding.', d: 'For individuals and couples who want to prepare for, strengthen, heal, or better understand their relationships.', acts: [['Request a callback', 'Relationship Wellness'], ['Before marriage', 'Relationship Wellness', 1], ['For married couples', 'Relationship Wellness', 1]], img: 'relationship' },
+  { id: 'programmes', bg: 'bg-mist text-ink', fmt: ['Guided programme', 'Life stages'], t: 'Emotional Wellness Programs', line: 'Support for the journeys that matter to you.', d: 'Structured programmes designed to support you through different stages and experiences of life, step by step.', acts: [['Request a callback', 'Emotional Wellness Programs']], img: 'emotional' },
+]
+
+export const TILES = [
+  ['Self-paced course', 'Journey to Yourself', 'Small lessons, meaningful change. Learn, reflect and grow in your own time.', 'Ask about the course', 'Journey to Yourself course', 'journey'],
+  ['Live events', 'Webinars & Masterclasses', 'Live learning with space to reflect and ask questions. New dates announced on Instagram.', 'Follow for dates', 'Something else', 'webinars'],
+  ['Community', 'You don\'t have to grow alone', 'A supportive space for reflection, connection and shared learning.', 'Ask to join', 'Joining the WhatsApp community', 'community'],
+]
