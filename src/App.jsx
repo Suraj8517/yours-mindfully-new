@@ -14,8 +14,7 @@ import Final from './Components/final'
 import Footer from './Components/footer'
 import Header from './Components/header'
 import { Ctx } from './Components/utils/ctx'
-
-
+import MindfullyLoader from './Components/utils/loader'   
 
 export default function App() {
   const [interest, setInterest] = useState('Clarity Connect (30 min)')
@@ -44,6 +43,7 @@ export default function App() {
   }, [])
   return (
     <Ctx.Provider value={setInterest}>
+      <MindfullyLoader />                                      
       <Header progress={progress} />
       <main>
         <Hero /><Familiar on={on} /><Services /><Check /><Process pathRef={pathRef} onSteps={steps} /><Beliefs /><Team /><Stories /><FAQ />
