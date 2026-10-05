@@ -23,7 +23,6 @@ export default function Hero() {
     const mm = gsap.matchMedia()
 
     mm.add('(prefers-reduced-motion: no-preference)', () => {
-      /* ---------- 1. Breathing: one 10s master timeline drives orb, rings and label ---------- */
       const el = label.current
       const swap = (text) => () => { el.firstElementChild.textContent = text }
       const textIn  = { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 1, ease: 'power2.out' }
@@ -84,7 +83,6 @@ export default function Hero() {
     return () => mm.revert()
   }, { scope: root })
 
-  // smooth slow-down / speed-up on hover instead of a hard pause
   const slow = (to) => tickTween.current && gsap.to(tickTween.current, { timeScale: to, duration: 0.6, overwrite: true })
 
   return (

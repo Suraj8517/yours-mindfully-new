@@ -15,6 +15,7 @@ import Footer from './Components/footer'
 import Header from './Components/header'
 import { Ctx } from './Components/utils/ctx'
 import MindfullyLoader from './Components/utils/loader'   
+import ScrollToTop from './Components/utils/scrollToTop'
 
 export default function App() {
   const [interest, setInterest] = useState('Clarity Connect (30 min)')
@@ -43,17 +44,14 @@ export default function App() {
   }, [])
   return (
     <Ctx.Provider value={setInterest}>
-      <MindfullyLoader />                                      
+      <MindfullyLoader />  
+       <ScrollToTop />                                    
       <Header progress={progress} />
       <main>
         <Hero /><Familiar on={on} /><Services /><Check /><Process pathRef={pathRef} onSteps={steps} /><Beliefs /><Team /><Stories /><FAQ />
         <Final interest={interest} setInterest={setInterest} />
       </main>
       <Footer />
-      <div className="fixed inset-x-0 bottom-0 z-50 hidden gap-2.5 border-t border-line bg-paper/90 px-4 pt-2.5 pb-[calc(10px+env(safe-area-inset-bottom,0px))] backdrop-blur-[12px] max-[900px]:flex">
-        <Btn kind="line" href="#check" className="flex-1 !min-h-12 !text-[.93rem]">Self-check</Btn>
-        <Btn className="flex-1 !min-h-12 !text-[.93rem]">Book a session</Btn>
-      </div>
     </Ctx.Provider>
   )
 }
